@@ -11,18 +11,15 @@ function setup() {
   noCanvas();
   // textSize(10);
   showData();
-
 }
 
 
 function showData(){
     var count = table.getRowCount();
-    var rowHeight = height/count;
-    var ObjectNameTable = table.getColumn('Object Name');
         
     for (var i=0; i<count; i++) {
         var objectName = table.getString(i,5);
-        var span = createSpan(objectName + " ");
+        var span = createSpan(objectName + " | ");
         if(objectName=="Coin"){
           span.addClass("highlight");
         }
