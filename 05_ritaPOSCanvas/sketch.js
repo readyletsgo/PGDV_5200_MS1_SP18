@@ -1,9 +1,11 @@
-var rs; 
+// This is our source lyric
 var lyric = "Before this, did you really know what live was? Comprehend to the track, for it's why 'cause Getting measures on the tip of the vibers Rock and roll to the beat of the funk fuzz Wipe your feet really good on the rhythm rug If you feel the urge to freak, do the jitterbug Come and spread your arms if you really need a hug Afrocentric living is a big shrug"
 
+// This is our rita string
+var rs; 
 
 function setup() {
-    createCanvas(4000,300);
+    createCanvas(6000,300);
     visualize(lyric);
 }
 
@@ -11,6 +13,9 @@ function visualize(str){
     background(255);
     fill(0);
     textSize(40);
+    
+    // convert the incoming string into a rita string
+    
     rs = RiString(str);
     var words = rs.words();
     var pos = rs.pos();
