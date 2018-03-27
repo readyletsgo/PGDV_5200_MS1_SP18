@@ -6,7 +6,6 @@ Authored by John Kuiphoff
 http://coursescript.com/notes/interactivecomputing/objects/index.html
 */
 
-var car;
 var xPos, yPos, c;
       
 function setup()
@@ -16,6 +15,8 @@ function setup()
   ypos = random(height);
   speed = random(4);
   c = color(random(255), random(255), random(255));
+
+  // car body
   fill(this.c);
   rectMode(CORNER);
   rect(this.xpos, this.ypos, 100, 50);
