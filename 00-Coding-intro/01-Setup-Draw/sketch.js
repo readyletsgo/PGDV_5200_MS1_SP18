@@ -1,24 +1,51 @@
-var y = 100;
+// var y = 0;
+var x = 0;
+var isDrawing = false;
+var xEnd = 200;
 
-// The statements in the setup() function 
-// execute once when the program begins
+// var myVar = setInterval(drawLineToPoint, 500);
+
+
 function setup() {
-	// createCanvas must be the first statement
   createCanvas(720, 400);  
   stroke(255);     // Set line drawing color to white
   frameRate(60);
   background(0);   // Set the background to black
 }
-// The statements in draw() are executed until the 
-// program is stopped. Each statement is executed in 
-// sequence and after the last line is read, the first 
-// line is executed again.
-function draw() { 
-  // println("hello");
-  background(200,0,0);   // Set the background to black
-  y = y - 2; 
-  if (y < 0) { 
-    y = height; 
-  } 
-  line(0, y, width, y-20);  
-} 
+
+function mousePressed(){
+  // console.log("mousePressed");
+  // drawOneLine();
+  isDrawing=true;
+}
+
+function drawOneLine(){
+  stroke(255,0,0 );
+  line(0,random(height),width,random(300));
+}
+
+
+
+function drawLineToPoint(){
+  line(0,300,x,300);
+  
+    x++;  
+    if(x>xEnd){
+      x=0;
+      isDrawing=false;
+      // noLoop();
+    }
+    // isDrawing = false;
+  
+}
+
+
+
+function draw(){
+
+  if(isDrawing){
+    drawLineToPoint();
+    console.log("drawing " + frameCount);
+  }
+  // background(0);
+}
